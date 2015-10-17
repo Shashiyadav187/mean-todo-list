@@ -3,12 +3,14 @@ var http = require('http');
 var assert = require('assert');
 var mongodb = require('mongodb');
 var path = require('path');
+var bodyParser = require('body-parser');
+var logger = require('morgan');
 
 var app = express();
 app.set('port', process.env.PORT || 3000);
-app.use(express.bodyParser());
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'static')));
-app.use(express.logger('dev'));
+app.use(logger('dev'));
 
 // Connect to MongoDB todo collection.
 var collection;
