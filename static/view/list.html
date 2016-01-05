@@ -1,0 +1,14 @@
+<div ng-controller="todoController" ng-init="init()">
+	<form ng-submit="add()">
+		<input type="text" required placeholder="Todo" ng-model="text">
+	</form>
+
+	<ul>
+		<li ng-repeat="todo in todoList">
+			<input type="text" class="text" value="{{ todo.text }}" ng-model="todo.text" ng-change="save(todo)" />
+			&nbsp;<span class="deleteButton" ng-click="remove(todo)">x</span>
+		</li>
+	</ul>
+
+	<p><input type="button" value="Logout" ng-click="logout()"></p>
+</div>

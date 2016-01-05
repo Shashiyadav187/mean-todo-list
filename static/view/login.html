@@ -1,0 +1,10 @@
+<div ng-controller="loginController">
+	<p>{{message}}</p>
+	<form ng-submit="login()">
+		<ul>
+			<li><input type="text" required placeholder="username" ng-model="username"></li>
+			<li><input type="password" required placeholder="password" ng-model="password"></li>
+		</ul>
+		<input type="submit" value="Login">
+	</form>
+</div>
